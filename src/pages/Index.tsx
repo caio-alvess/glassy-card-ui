@@ -22,18 +22,28 @@ const Index = () => {
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
 
   return (
-    <div className="min-h-screen animated-gradient flex items-center justify-center p-4">
+    <div className="min-h-screen animated-gradient flex flex-col items-center justify-center p-4">
       {/* Decorative orbs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
       </div>
 
+      {/* Logo Header */}
+      <header className="relative mb-8 animate-fade-in">
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/30">
+            <span className="text-lg font-bold text-primary-foreground tracking-tight">AD</span>
+          </div>
+          <span className="text-2xl font-semibold text-foreground tracking-tight">ADMU</span>
+        </div>
+      </header>
+
       {/* Main Card */}
       <main className="relative w-full max-w-md animate-fade-in">
         <div className="glass-card p-8">
-          {/* Header */}
-          <header className="text-center mb-8">
+          {/* Card Header */}
+          <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/20 mb-4">
               <Upload className="w-7 h-7 text-primary" />
             </div>
@@ -43,7 +53,7 @@ const Index = () => {
             <p className="text-sm text-muted-foreground mt-2">
               Adicione uma imagem com título e data de expiração
             </p>
-          </header>
+          </div>
 
           {/* Form */}
           <form className="space-y-6">
